@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHINEX - Funny Tests</title>
+    <link rel="shortcut icon" href="../img/strikethrough-s_118594.ico" type="image/x-icon">
+    <!-- libs -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market|Montserrat:400,700|Saira+Stencil+One&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Oswald:400,700|Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="#"><img src="../img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class=" nav-ul m-auto col-xl-6 justify-content-around">
+                        <li class="nav-item active">
+                            <a class="navbar-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="navbar-link" href="../test.html">Test</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="navbar-link" href="../more.html">More</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="navbar-link" href="../about.html">About</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+
+
+            <div class="test-block">
+                <div class=" main">
+                    <span class="test-title">Which <span class="test-name">"Test Title"</span> Character Are You?</span> <br>
+                    <img class="testimg" src="" alt="">
+                    <ul class="questions-list " id="questionList">
+
+                    </ul>
+
+                    <div class="btns col-xl-6">
+                        <a href="#!" class="res">FINISH</a>
+                        <a href="#!" class="reset">RESET</a>
+                    </div>
+
+                    <div class="resBlock col-xl-6">
+                        <img src="" width="300" alt=""><br>
+                        <span></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <footer class="text-center">
+        <nav class="footer-ul bg-dark m-auto">
+            <p>All rights are reserved <i class="yellow fas fa-copyright"></i> 2019 <br> Made with <i class=" red fas fa-heart"></i>
+            </p>
+            <a href="#!"><img src="../img/logo.png" alt=""></a>
+        </nav>
+    </footer>
+
+
+
+    <div class="libs">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e1ca95c7ae.js"></script>
+    </div>
+
+    <div class="scripts">
+        <script src="../js/jquery-3.4.1.min.js"></script>
+    </div>
+    <script>
+        $(function () {
+            function TestFunction(name, questionsList, questionsPlace) {
+                var $name = name;
+                var $questions = questionsList;
+                var $questionsPlace = questionsPlace;
+                for (var i = 0; i < $questionsPlace.length; i++) {
+                    var questionPlace = $questionsPlace[i];
+                    var question = $questions[i];
+                    $(questionPlace).html(question);
+                }
+
+                $('.test-name').html($name);
+            }
+            var questionsList = [
+                'Which element is most familiar for you?',
+                'What about your hobbies?',
+                'Describe yourself with one word',
+                'What do you appreciate in men',
+                'Your attitude to animals',
+            ];
+            var questionsPlace = [
+                $('.q-1'),
+                $('.q-2'),
+                $('.q-3'),
+                $('.q-4'),
+                $('.q-5')
+            ];
+
+            var answerList = [
+                ['Water', 'Land', 'Fire'],
+                ['Books', 'Travelling', 'Creativity'],
+                ['Beautifull', 'Hardworker', 'Friendly'],
+                ['Braveness', 'Humor', 'Happiness'],
+                ['Hate them', 'Indiffirent', 'Love them']
+            ];
+
+            var questionList2 = document.getElementById("questionList");
+            questionList2.innerHTML = '';
+            for (var i = 1; i <= answerList.length; i++) {
+                questionList2.innerHTML += '<li class="question" id="question' + i + '"> ' + i + ') <span class="q-1">' + questionsList[i - 1] + '</span > <ul class="answers-list"> <li><label> <input type="radio" class="answer-11 an-1" name="answer' + i + '"><span class="answ-1" id="answer-11"> ' + answerList[i - 1][0] + ' </span></label></li> <li><label> <input type="radio" class="answer-12 an-2" id="answer-12" name="answer' + i + '"><span class="answ-1"> ' + answerList[i - 1][1] + ' </span></label></li> <li><label> <input type="radio" class="answer-13 an-3" id="answer-13" name="answer' + i + '"><span class="answ-1"> ' + answerList[i - 1][2] + ' </span></label></li> </ul> </li>';
+            }
+
+
+            var radio = document.querySelector('.radio');
+            var $res = document.querySelector('.res');
+            var result1 = 0;
+            var result2 = 0;
+            var result3 = 0;
+            $($res).click(function () {
+                var $an1 = $('.an-1');
+                var $an2 = $('.an-2');
+                var $an3 = $('.an-3');
+                for (var i = 0; i < $an1.length; i++) {
+                    var an1 = $an1[i];
+                    if (an1.checked) {
+                        result1 = result1 + 1;
+                    }
+                }
+                for (var i = 0; i < $an2.length; i++) {
+                    var an2 = $an2[i];
+                    if (an2.checked) {
+                        result2 = result2 + 2;
+                    }
+                }
+
+                for (var i = 0; i < $an2.length; i++) {
+                    var an3 = $an3[i];
+                    if (an3.checked) {
+                        result3 = result3 + 3;
+                    }
+                }
+
+                var mainres = result1 + result2 + result3;
+                console.log(mainres);
+
+                if (mainres == 5 || mainres == 6) {
+                    $(".resBlock img").attr("src", "../img/results/princess/avrora-min.jpg");
+                    $('.resBlock span').html('Princess Aurora, also known as Sleeping Beauty or Briar Rose, is a fictional character who appears in Walt Disney Productions 16th animated feature film Sleeping Beauty(1959).Originally voiced by singer Mary Costa, Aurora is the only daughter of King Stefan and Queen Leah.Seeking revenge for not being invited to Aurora christening, an evil fairy named Maleficent curses the newborn princess, foretelling that she will die on her 16th birthday by pricking her finger on a spinning wheels spindle.Determined to prevent this, three good fairies raise Aurora as a peasant in order to protect her, patiently awaiting her 16th birthday – the day the spell is to be broken by a kiss from her true love, Prince Phillip. ')
+                }
+                else if (mainres == 11 || mainres == 12) {
+                    $(".resBlock img").attr("src", "../img/results/princess/snow-min.jpg");
+                    $('.resBlock span').html('Snow White is a fictional character and a main character from Walt Disney Productions first animated feature film Snow White and the Seven Dwarfs.The character of Snow White was derived from a fairy tale known from many countries in Europe, the best - known version being the Bavarian one collected by the Brothers Grimm. ')
+                }
+                else if (mainres == 9 || mainres == 10) {
+                    $(".resBlock img").attr("src", "../img/results/princess/belle-min.jpg");
+                    $('.resBlock span').html('Belle is a fictional character who appears in Walt Disney Pictures 30th animated feature film Beauty and the Beast(1991).Originally voiced by American actress and singer Paige OHara, Belle is the non-conforming daughter of an inventor who yearns to abandon her predictable village life in return for adventure. When her father Maurice is imprisoned by a cold-hearted beast, Belle offers him her own freedom in exchange for her father, and eventually learns to love the Beast despite his unsightly outward appearance. ')
+                }
+                else if (mainres == 7 || mainres == 8) {
+                    $(".resBlock img").attr("src", "../img/results/princess/ariel-min.jpg");
+                    $('.resBlock span').html('Ariel is the seventh-born daughter of King Triton and Queen Athena of an underwater kingdom of Merfolk called Atlantica. She is often rebellious, and in the first film, she longs to be a part of the human world. She marries Prince Eric, whom she rescued from a shipwreck, and together they have a daughter, Melody')
+                }
+                else if (mainres == 13 || mainres == 14) {
+                    $(".resBlock img").attr("src", "../img/results/princess/rapuncel-min.jpg");
+                    $('.resBlock span').html('Rapunzel is a fictional character who appears in Walt Disney Animation Studios 50th animated feature film Tangled, its sequel Tangled Ever After, and its television spin - off Tangled: The Series.Voiced by American actress and singer Mandy Moore, Rapunzel is a young princess kept unaware of her royal heritage by a vain old woman named Mother Gothel, who raises her in a secluded tower in order to exploit her hair healing abilities to remain young and beautiful forever. ')
+                }
+                else {
+                    $(".resBlock img").attr("src", "../img/results/princess/Cinderella-min.jpeg");
+                    $('.resBlock span').html('Cinderella is a fictional character who appears in Walt Disney Productions 12th animated feature film Cinderella(1950) and its sequels Cinderella II: Dreams Come True(2002) and Cinderella III: A Twist in Time(2007).In the original film, Cinderella is voiced by American singer and actress Ilene Woods.For the sequels and subsequent film and television appearances, Woods was replaced by American actresses Jennifer Hale and Tami Tappan, who provide the character speaking and singing voices respectively. ')
+                }
+
+                $('.resBlock').addClass('animated fadeInLeft');
+
+            })
+
+
+
+
+
+
+
+            TestFunction('"Disney Princess"', questionsList, questionsPlace)
+            $(".testimg").attr("src", "../img/tests/Disney Princess.jpg");
+
+
+            $('.reset').click(function () {
+                location.reload(true);
+            })
+
+
+
+
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
